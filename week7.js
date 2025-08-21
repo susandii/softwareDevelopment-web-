@@ -26,18 +26,25 @@ console.log(students3.name);
 //     console.log(product.name);
 // }
 
-let settings = {
-    theme : "dark",
-    fontSize : "16px"
-};
+// let settings = {
+//     theme : "dark",
+//     fontSize : "16px"
+// };
 
-localStorage.setItem("usersettings", JSON.stringify(settings));
+// localStorage.setItem("usersettings", JSON.stringify(settings));
 
-let saved = 
-localStorage.getItem("usersettings");
+// let saved = 
+// localStorage.getItem("usersettings");
 
-let saved = 
-localStorage.getItem("usersettings");
-console.log(JSON.parse(saved));
+// let saved = 
+// localStorage.getItem("usersettings");
+// console.log(JSON.parse(saved));
 
+/*favourite item
+1)create a small form with an input and a button "save food"
+2) on button click
+        -take input text
+        -save into local storage as JSON array(array of food)
+3)display all thr food from the local storage
+*/
 
