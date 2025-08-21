@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Card</title>
+  <style>
+    body {display:flex;justify-content:center;align-items:center;height:100vh;background:#f3f3f3;font-family:sans-serif}
+    .card {width:300px;padding:20px;border-radius:15px;box-shadow:0 2px 5px rgba(0,0,0,0.2);background:#fff;transition:0.3s;text-align:center}
+    .card:hover {box-shadow:0 0 15px rgba(0,150,255,0.7)}
+    .fav {border:2px solid gold}
+    input {display:block;width:90%;padding:8px;margin:10px auto;border:1px solid #ccc;border-radius:5px}
+    .hint {font-size:12px;color:#777;height:14px}
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h2>Profile</h2>
+    <input type="text" id="name" placeholder="Name">
+    <div class="hint" id="hintName"></div>
+    <input type="email" id="email" placeholder="Email">
+    <div class="hint" id="hintEmail"></div>
+    <input type="number" id="age" placeholder="Age">
+    <div class="hint" id="hintAge"></div>
+  </div>
+  <script>
+    const card=document.getElementById("card")
+    card.ondblclick=()=>card.classList.toggle("fav")
+
+    function handleFocus(input,hint,text){
+      input.onfocus=()=>{input.style.border="2px solid dodgerblue";hint.innerText=text}
+      input.onblur=()=>{input.style.border="1px solid #ccc";hint.innerText="";if(!input.checkValidity()){alert("Invalid "+input.placeholder)}}
+    }
+
+    handleFocus(document.getElementById("name"),document.getElementById("hintName"),"Enter full name")
+    handleFocus(document.getElementById("email"),document.getElementById("hintEmail"),"Enter a valid email")
+    handleFocus(document.getElementById("age"),document.getElementById("hintAge"),"Enter age in numbers")
+  </script>
+</body>
+</html>
+
